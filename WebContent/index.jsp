@@ -19,6 +19,6 @@
 	<br>
 	<a href="version3/index.html">version3</a>
 	<br>
-	<a href="target/index.html">target</a>
+	<a href="target/index.jsp">target</a>
   </body>
 </html>

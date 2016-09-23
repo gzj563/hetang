@@ -6,6 +6,6 @@
 
     <!-- The Usual Welcome File List -->
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>target/index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
