@@ -40,14 +40,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="head-top">
 			<div class="logo">
 				<h1><a href="#">禾唐</a></h1>
+                <h5>北京佳禾阳光科技发展有限公司</h5>
 			</div>
 		<div class="top-nav">
 			  <span class="menu"><img src="<%=pjtPath%>/target/images/menu.png" alt=""> </span>
 
 					<ul>
-						<li class="active"><a class="color1" href="#"  >Home</a></li>
+						<li class="active"><a class="color1" href="#"  >首页</a></li>
 						<li><a class="color2" href="<%=pjtPath%>/target/games.html"  >产品</a></li>
-						<li><a class="color6" href="<%=pjtPath%>/target/contact.html" >Contact</a></li>
+						<li><a class="color6" href="<%=pjtPath%>/target/contact.jsp" >联系我们</a></li>
 						<div class="clearfix"> </div>
 					</ul>
 
@@ -165,16 +166,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						ut aut reiciendis voluptatibus</p>
 				</div>
 			</div>
-			<div class="col-md-4 product-grid">
-				<a href="<%=pjtPath%>/target/images/la1.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
-					<img src="<%=pjtPath%>/target/images/la1.jpg" alt=" " class="img-responsive" />
-				</a>
-				<div class="project-grid-text1">
-					<h4> voluptatibus maiores alias perferendis</h4>
-					<p> Itaque earum rerum hic tenetur a sapiente delectus,
-						ut aut reiciendis voluptatibus</p>
-				</div>
-			</div>
 
 
 			<link rel="stylesheet" href="<%=pjtPath%>/target/css/swipebox.css">
@@ -273,15 +264,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					<div class="clearfix"> </div>
 					</div>
-					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="<%=pjtPath%>/target/images/la2.jpg" alt=""></a>
-						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
-						</div>
-					<div class="clearfix"> </div>
-					</div>
 				</div>
 				<div class="col-md-4 latest">
 					<h4>Featured</h4>
@@ -296,15 +278,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="late">
 						<a href="single.html" class="fashion"><img class="img-responsive " src="<%=pjtPath%>/target/images/la2.jpg" alt=""></a>
-						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
-						</div>
-					<div class="clearfix"> </div>
-					</div>
-					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="<%=pjtPath%>/target/images/la1.jpg" alt=""></a>
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
@@ -333,15 +306,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					<div class="clearfix"> </div>
 					</div>
-					<div class="late">
-						<a href="single.html" class="fashion"><img class="img-responsive " src="<%=pjtPath%>/target/images/la3.jpg" alt=""></a>
-						<div class="grid-product">
-							<span>6 Apr, 2015</span>
-							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
-						</div>
-					<div class="clearfix"> </div>
-					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -350,37 +314,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- foot 版权和一些链接信息-->
 <!-- footer -->
-<div class="footer">
-	<div class="container">
-		<div class="col-md-4 footer-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h4>Contact</h4>
-			<address>
-				北京市丰台区<br>
-				刘家窑<br>
-				<abbr title="Phone">P :</abbr> 12345678910
-			</address>
-		</div>
-		<div class="col-md-4 footer-left animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h4>Opening Hours</h4>
-			<h5>Monday-Friday</h5>
-			<p>9:30am - 20:30pm</p>
-			<h5>Saturday</h5>
-			<p>10:00am - 18:30pm</p>
-		</div>
-		<div class="col-md-4 footer-left animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h4>Follow Us</h4>
-			<div class="soci">
-				<li><a href="#"><i class="f-1"> </i></a></li>
-				<li><a href="#"><i class="t-1"> </i></a></li>
-				<li><a href="#"><i class="g-1"> </i></a></li>
-			</div>
-		</div>
-		<div class="clearfix"> </div>
-		<div class="footer-bottom">
-			<p>© 2016 . All Rights Reserved | Design by  hetang </p>
-		</div>
-	</div>
-</div>
+<jsp:include   page="footer.jsp" flush="true"/>
 <!-- footer -->
 
 </body>

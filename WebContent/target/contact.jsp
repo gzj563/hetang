@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +16,6 @@
 <meta name="keywords" content="Games Center Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<link href='http://fonts.useso.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-<!--//fonts-->
 
 </head>
 <body> 
@@ -33,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"><img src="images/menu.png" alt=""> </span>
 
 					<ul>
-						<li class="active"><a class="color1" href="#"  >首页</a></li>
+						<li class="active"><a class="color1" href="index.jsp"  >首页</a></li>
 						<li><a class="color2" href="games.html"  >产品</a></li>
 						<li><a class="color6" href="contact.html" >Contact</a></li>
 						<div class="clearfix"> </div>
@@ -78,16 +76,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 contact-in">
 
 						<div class="address-more">
-						<h4>Address</h4>
-							<p>The company name,</p>
-							<p>Lorem ipsum dolor,</p>
-							<p>Glasglow Dr 40 Fe 72. </p>
+						<h4>地址</h4>
+							<p>北京市丰台区</p>
+							<p>右安门外大街凉水河南岸</p>
+							<p>26号 </p>
 						</div>
 						<div class="address-more">
-						<h4>Address1</h4>
-							<p>Tel:1115550001</p>
-							<p>Fax:190-4509-494</p>
-							<p>Email:<a href="mailto:contact@example.com"> contact@example.com</a></p>
+						<h4>联系方式</h4>
+							<p>Tel:010-83533275</p>
+							<p>Fax:010-83532758</p>
+							<p>Email:<a href="mailto:jhyg001@sina.com"> jhyg001@sina.com</a></p>
 						</div>
 					
 				</div>
@@ -95,54 +93,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37494223.23909492!2d103!3d55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1415776049771"></iframe>
+
 			</div>
 	</div>
 	<!---->
-	<div class="footer">
-	<div class="footer-middle">
-				<div class="container">
-					<div class="footer-middle-in">
-						<h6>About us</h6>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-					</div>
-					<div class="footer-middle-in">
-						<h6>Information</h6>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Delivery Information</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms & Conditions</a></li>
-						</ul>
-					</div>
-				<div class="footer-middle-in">
-						<h6>Customer Service</h6>
-						<ul>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-						</ul>
-					</div>
-					<div class="footer-middle-in">
-						<h6>My Account</h6>
-						<ul>
-							<li><a href="#">Order History</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Newsletter</a></li>
-						</ul>
-					</div>
-					<div class="footer-middle-in">
-						<h6>Extras</h6>
-						<ul>
-							<li><a href="#">Affiliates</a></li>
-							<li><a href="#">Specials</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-		</div>
+
+    <jsp:include   page="footer.jsp" flush="true"/>
 
 </body>
 </html>
