@@ -11,3 +11,7 @@ what you can do:
         you can build war for this project easily, just execute command 'gradle war' in command line
     2: uglify your java script file and css files
         execute command 'npm install'
+
+
+参考：
+    http://www.metinfo.cn/demo/met100/295/

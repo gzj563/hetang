@@ -32,41 +32,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="<%=pjtPath%>/target/css/component.css" />
 </head>
 <body> 
-<!--header-->	
-<div class="header" >
-
-		<div class="header-top">
-		<div class="container">
-		<div class="head-top">
-			<div class="logo">
-				<h1><a href="#">禾唐</a></h1>
-                <h5>北京佳禾阳光科技发展有限公司</h5>
-			</div>
-		<div class="top-nav">
-			  <span class="menu"><img src="<%=pjtPath%>/target/images/menu.png" alt=""> </span>
-
-					<ul>
-						<li class="active"><a class="color1" href="#"  >首页</a></li>
-						<li><a class="color2" href="<%=pjtPath%>/target/games.html"  >产品</a></li>
-						<li><a class="color6" href="<%=pjtPath%>/target/contact.jsp" >联系我们</a></li>
-						<div class="clearfix"> </div>
-					</ul>
-
-					<!--script-->
-				<script>
-					$("span.menu").click(function(){
-						$(".top-nav ul").slideToggle(500, function(){
-						});
-					});
-			</script>
-
-				</div>
-
-				<div class="clearfix"> </div>
-		</div>
-		</div>
-	</div>
-</div>
+<!--header-->
+<jsp:include   page="head.jsp" flush="true"/>
 <!--banner-->
 
 	<div class="banner">
@@ -182,20 +149,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!----->
 
 
-		<div class="col-mn">
-			<div class="container">
-					<div class="col-mn2">
-						<h3>The Best Features</h3>
-						<p>Contrary to popular belief
-							, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-						<a class=" more-in" href="single.html">Read More</a>
-				</div>
-			</div>
-		</div>
+<!--content  一个区域-->
+<div class="welcome">
+    <div class="container">
+        <h3>施用技术</h3>
+        <h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</h5>
+        <div id="products" class="products">
+            <div class="col-md-4 product-grid">
+                <a href="<%=pjtPath%>/target/images/la1.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
+                    <img src="<%=pjtPath%>/target/images/la1.jpg" alt=" " class="img-responsive" />
+                </a>
+                <div class="project-grid-text1">
+                    <h4> voluptatibus maiores alias perferendis</h4>
+                    <p> Itaque earum rerum hic tenetur a sapiente delectus,
+                        ut aut reiciendis voluptatibus</p>
+                </div>
+            </div>
+            <div class="col-md-4 product-grid">
+                <a href="<%=pjtPath%>/target/images/la2.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
+                    <img src="<%=pjtPath%>/target/images/la2.jpg" alt=" " class="img-responsive" />
+                </a>
+                <div class="project-grid-text1">
+                    <h4> voluptatibus maiores alias perferendis</h4>
+                    <p> Itaque earum rerum hic tenetur a sapiente delectus,
+                        ut aut reiciendis voluptatibus</p>
+                </div>
+            </div>
+            <div class="col-md-4 product-grid">
+                <a href="<%=pjtPath%>/target/images/la3.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
+                    <img src="<%=pjtPath%>/target/images/la3.jpg" alt=" " class="img-responsive" />
+                </a>
+                <div class="project-grid-text1">
+                    <h4> voluptatibus maiores alias perferendis</h4>
+                    <p> Itaque earum rerum hic tenetur a sapiente delectus,
+                        ut aut reiciendis voluptatibus</p>
+                </div>
+            </div>
 
 
-
-	<!-- -->
+            <link rel="stylesheet" href="<%=pjtPath%>/target/css/swipebox.css">
+            <script src="<%=pjtPath%>/target/js/jquery.swipebox.min.js"></script>
+            <script type="text/javascript">
+                jQuery(function($) {
+                    $(".swipebox").swipebox();
+                });
+            </script>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!----->
 
 <!--start-team-->
 <div class="team">
