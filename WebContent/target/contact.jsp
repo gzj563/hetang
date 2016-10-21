@@ -19,38 +19,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body> 
-<!--header-->
-<div class="header" >
-	<div class="header-top">
-		<div class="container">
-			<div class="head-top">
-				<div class="logo">
-					<h1><a href="index.html">禾唐</a></h1>
-				</div>
-				<div class="top-nav">
-					<span class="menu"><img src="images/menu.png" alt=""> </span>
+<!--header--><jsp:include   page="head.jsp" flush="true"/>
 
-					<ul>
-						<li class="active"><a class="color1" href="index.jsp"  >首页</a></li>
-						<li><a class="color2" href="games.html"  >产品</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
-						<div class="clearfix"> </div>
-					</ul>
-					<!--script-->
-					<script>
-						$("span.menu").click(function(){
-							$(".top-nav ul").slideToggle(500, function(){
-							});
-						});
-					</script>
 
-				</div>
-
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-</div>
 <!--banner-->
 
 <!--content-->

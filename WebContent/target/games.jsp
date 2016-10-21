@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,86 +21,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 </head>
 <body> 
-<!--header-->	
-<div class="header" >
-	<div class="top-header" >		
-		<div class="container">
-		<div class="top-head" >	
-			<ul class="header-in">
-				<li ><a href="#" >  Help</a></li>
-				<li><a href="contact.html">   Contact Us</a></li>
-				<li ><a href="#" >   How To Use</a></li>
-			</ul>
-			
-				<div class="search">
-					<form>
-						<input type="text" value="search about something ?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'search about something ?';}" >
-						<input type="submit" value="" >
-					</form>
-				</div>
-			
-				<div class="clearfix"> </div>
-		</div>
-		</div>
-	</div>
-		<!---->
-	
-		<div class="header-top">
-		<div class="container">
-		<div class="head-top">
-			<div class="logo">
-				<h1><a href="index.html"><span>G</span>ames <span>C</span>enter</a></h1>
-			</div>
-		<div class="top-nav">		
-			  <span class="menu"><img src="images/menu.png" alt=""> </span>
-				
-					<ul>
-						<li class="active"><a class="color1" href="index.html"  >Home</a></li>
-						<li><a class="color2" href="games.html"  >Games</a></li>
-						<li><a class="color3" href="reviews.html"  >Reviews</a></li>
-						<li><a class="color4" href="404.html" >News</a></li>
-						<li><a class="color5" href="blog.html"  >Blog</a></li>
-						<li><a class="color6" href="contact.html" >Contact</a></li>
-						<div class="clearfix"> </div>
-					</ul>
-
-					<!--script-->
-				<script>
-					$("span.menu").click(function(){
-						$(".top-nav ul").slideToggle(500, function(){
-						});
-					});
-			</script>
-
-				</div>
-				
-				<div class="clearfix"> </div>
-		</div>
-		</div>
-	</div>
-</div>
-
+<!--header-->
+<jsp:include   page="head.jsp" flush="true"/>
 <!--content-->
 	<div class="container">
 			<div class="games">
-				<h2> Games</h2>
+				<h2> 优质产品 </h2>
 			
 			<div class="wrap">	
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
 					<li>
 						<a href="#" data-largesrc="images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/1.jpg" alt="img01"/>
+							<img class="img-responsive" src="images/temp/2.jpg" alt="img01"/>
 						</a>
 					</li>
 					<li>
-						<a href="#" data-largesrc="images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/2.jpg" alt="img02"/>
+						<a href="#" data-largesrc="images/temp/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="images/temp/2.jpg" alt="img02"/>
 						</a>
 					</li>
 					<li>
 						<a href="#" data-largesrc="images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="images/thumbs/3.jpg" alt="img03"/>
+							<img class="img-responsive" src="images/temp/2.jpg" alt="img03"/>
 						</a>
 					</li>
 					<li>
@@ -159,50 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 	</div>
 	<!---->
-	<div class="footer">
-	<div class="footer-middle">
-				<div class="container">
-					<div class="footer-middle-in">
-						<h6>About us</h6>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-					</div>
-					<div class="footer-middle-in">
-						<h6>Information</h6>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Delivery Information</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms & Conditions</a></li>
-						</ul>
-					</div>
-					<div class="footer-middle-in">
-						<h6>Customer Service</h6>
-						<ul>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-						</ul>
-					</div>
-					<div class="footer-middle-in">
-						<h6>My Account</h6>
-						<ul>
-							<li><a href="#">Order History</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Newsletter</a></li>
-						</ul>
-					</div>
-					<div class="footer-middle-in">
-						<h6>Extras</h6>
-						<ul>
-							<li><a href="#">Affiliates</a></li>
-							<li><a href="#">Specials</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-		</div>
+
+<jsp:include   page="footer.jsp" flush="true"/>
 
 </body>
 </html>
