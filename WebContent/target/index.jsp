@@ -254,7 +254,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
@@ -263,7 +262,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
@@ -275,7 +273,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
@@ -284,7 +281,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
@@ -296,7 +292,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>
@@ -305,7 +300,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="grid-product">
 							<span>6 Apr, 2015</span>
 							<p><a href="single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-							<a class="comment" href="single.html"><i> </i> 0 Comments</a>
 						</div>
 					<div class="clearfix"> </div>
 					</div>

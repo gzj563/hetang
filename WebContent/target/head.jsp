@@ -4,9 +4,9 @@
 %>
 <div class="header" >
 
-    <div class="header-top">
+    <div class="header-top" style="background:darkseagreen;">
         <div class="container">
-            <div class="head-top">
+            <div class="head-top" >
                 <div class="logo">
                     <h1><a href="#">禾唐</a></h1>
                     </br>
