@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jet
-  Date: 2016/3/20
-  Time: 21:17
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*"%>
 <%
@@ -14,26 +8,14 @@
 <html>
 <head>
 <title>Home</title>
-<link href="<%=pjtPath%>/target/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="<%=pjtPath%>/target/js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="<%=pjtPath%>/target/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Games Center Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-<!--//fonts-->
-<script src="<%=pjtPath%>/target/js/modernizr.custom.js"></script>
-	<link rel="stylesheet" type="text/css" href="<%=pjtPath%>/target/css/component.css" />
 </head>
+
+
 <body> 
 <!--header-->
 <jsp:include   page="head.jsp" flush="true"/>
+
+
 <!--banner-->
 
 	<div class="banner">

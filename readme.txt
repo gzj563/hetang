@@ -16,5 +16,12 @@ what you can do:
 参考：
     http://www.metinfo.cn/demo/met100/295/
 
+
+模板下载：
+    1： 模板之家  http://www.cssmoban.com/tags.asp?
+        提供网站模板下载，并能下载源码。
+    2：模板王  http://www.mobanwang.com/mb/way/List_43.html
+        提供源码下载
+
 图片制作：
     http://www.uupoop.com/ photoshop 在线软件
