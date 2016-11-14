@@ -5,6 +5,10 @@
 
     <%
         String projectPath=request.getContextPath();
+        String showTool=request.getParameter("showTool");
+        if("".equals(showTool) || showTool == null){
+            showTool = "none";
+        }
     %>
 
     <link rel="stylesheet" type="text/css" href="<%=projectPath%>/commonRes/tcal.css" />
@@ -20,8 +24,54 @@
         .input{font-size:16px;color:#000000;line-height:20px;padding:10px 0;margin:-10px 0;}
     </style>
     <SCRIPT type="text/javascript">
+        function deleteMe(self){
+            var blogSection = $(self).closest('.blog-to')[0];
+            blogSection.remove();
+            //save the rest content
+            blogDiv = $(".single-inline")[0];
+            saveContent(blogDiv.innerHTML);
+        };
+        function saveContent(blogContent){
+            if(blogContent){
+                blogContent.replace(/display: block/g,"display: none");
+
+                var content = encodeURI(encodeURI(blogContent));
+                var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=saveRestContent&data='+new Date();
+                var param="&contentDesc="+content;
+                dataType: "text" //ajax 返回 文件 类型
+                $.ajax({
+                    url: action,
+                    method: 'POST',
+                    data: param ,
+                    success: function(data,status){
+                    	if(data == '1'){
+                    		alert("保存成功");
+                    	}else{
+                    		alert(data);
+                    	}
+                        
+                    }
+                });
+
+            }
+        };
 
         KindEditor.ready(function(K) {
+
+            var htmlObj = $.ajax({
+                url:"<%=projectPath%>/target/blogContent.txt",
+                async:false,
+
+            });//$.ajax() 返回其创建的 XMLHttpRequest 对象
+            if(htmlObj.responseText){
+                blogDiv = $(".single-inline")[0];
+                if(blogDiv){
+                    $(blogDiv).prepend(htmlObj.responseText.replace(/display: none/g,"display: block"));
+                }
+            }
+
+
+
             var editor1 = K.create('textarea[name="contentDesc"]', {
                 cssPath : '<%=projectPath%>/commonRes/kindeditor/plugins/code/prettify.css', //modify according to actual situation
                 uploadJson : '<%=projectPath%>/upload_json.jsp', //modify according to actual situation
@@ -64,10 +114,32 @@
                     return false;
                 }
 
-
                 console.log("start analyzing the file:"+new Date());
 
+                blogDiv = $(".single-inline")[0];
+                if(blogDiv){
+                    $(blogDiv).prepend("<div class='blog-to'> <div style='display: none;'><input type='button' value='delete' onclick='deleteMe(this);'/> </div>  "+content+"   </div>");
+                }
+                //update local file
+                var blogContent = blogDiv.innerHTML;
+                if(blogContent){
+                    // replace display:block with display:none
+                    saveContent(blogContent);
+                }
 
+
+
+                /*
+                //it is easy to read one file
+                var htmlObj = $.ajax({
+                    url:"<%=projectPath%>/target/news.jsp",
+                    async:false,
+
+                });//$.ajax() 返回其创建的 XMLHttpRequest 对象
+                console.log(htmlObj.responseText);
+                */
+
+                /*
                 var f = "<%=projectPath%>/target/news.jsp";
                 if (f) {
                     var r = new FileReader();
@@ -87,8 +159,10 @@
                     }
                     r.readAsText(f);
                 }
+                */
             });
         });
+
 
     </SCRIPT>
 
@@ -109,7 +183,6 @@
             </tr>
             <tr height=60 valign=top>
                 <td><table class="editTable" width="100%" cellspacing="0" cellpadding="0">
-
                     <tr class="bar">
                         <td class="editTdName">
                             新闻标题
@@ -142,6 +215,19 @@
         </table>
     </form>
 </center>
+
+
+<div class="blog">
+    <div class="container">
+        <h3>Blogs</h3>
+        <div class="single-inline">
+
+
+
+        </div>
+    </div>
+</div>
+<!-- //blog -->
 
 
 <jsp:include   page="footer.jsp" flush="true"/>

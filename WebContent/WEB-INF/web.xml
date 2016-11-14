@@ -4,6 +4,15 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <servlet>
+        <servlet-name>HandlerManager</servlet-name>
+        <servlet-class>servlet.handler.HandlerManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandlerManager</servlet-name>
+        <url-pattern>/HandlerManager</url-pattern>
+    </servlet-mapping>
+
     <!-- The Usual Welcome File List -->
     <welcome-file-list>
         <welcome-file>target/index.jsp</welcome-file>

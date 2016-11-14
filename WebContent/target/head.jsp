@@ -37,6 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <ul>
                         <li class="active"><a class="color1" href="<%=pjtPath%>/target/index.jsp">首页</a></li>
+                        <li><a class="color6" href="<%=pjtPath%>/target/effectDemo.jsp" >效果展示</a></li>
                         <li><a class="color2" href="<%=pjtPath%>/target/games.jsp"  >产品</a></li>
                         <li><a class="color3" href="<%=pjtPath%>/target/company.jsp"  >公司介绍</a></li>
                         <li><a class="color4" href="<%=pjtPath%>/target/news.jsp"  >最新时事</a></li>

@@ -21,7 +21,6 @@
 <!--header-->
 <jsp:include   page="head.jsp" flush="true"/>
 <!--banner-->
-
 	<div class="banner">
 		<div class="container">
 		  <div class="wmuSlider example1">
@@ -81,6 +80,8 @@
 		
 		</div>   
 	</div>
+
+
 
 
 <!--content  一个区域-->
