@@ -18,20 +18,22 @@
 
     $(window).load(function() {
     	
-        var htmlObj = $.ajax({
-            url:"<%=projectPath%>/target/blogContent.txt",
-            async:false,
-
-        });//$.ajax() 返回其创建的 XMLHttpRequest 对象
-        if(htmlObj.responseText){
-            blogDiv = $(".single-inline")[0];
-            if(blogDiv){
-                $(blogDiv).prepend(htmlObj.responseText);
+    	var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getBlogs&date='+new Date();
+        dataType: "text" //ajax 返回 文件 类型
+        $.ajax({
+            url: action,
+            method: 'get',
+            success: function(jsonStr,status){
+            	if(jsonStr){
+            		var json = eval('('+jsonStr+ ')');
+            		blogDiv = $(".single-inline")[0];
+                    if(blogDiv){
+                        $(blogDiv).prepend(json.content);
+                    }
+            	}
+            	
             }
-        }
-        
-        
-        
+        });
     });
 </script>
 

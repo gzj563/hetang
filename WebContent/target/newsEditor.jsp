@@ -36,7 +36,7 @@
                 blogContent.replace(/display: block/g,"display: none");
 
                 var content = encodeURI(encodeURI(blogContent));
-                var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=saveRestContent&data='+new Date();
+                var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=updateBlogContent&date='+new Date();
                 var param="&contentDesc="+content;
                 dataType: "text" //ajax 返回 文件 类型
                 $.ajax({
@@ -44,12 +44,7 @@
                     method: 'POST',
                     data: param ,
                     success: function(data,status){
-                    	if(data == '1'){
-                    		alert("保存成功");
-                    	}else{
-                    		alert(data);
-                    	}
-                        
+                    	alert(data);
                     }
                 });
 
@@ -58,19 +53,22 @@
 
         KindEditor.ready(function(K) {
 
-            var htmlObj = $.ajax({
-                url:"<%=projectPath%>/target/blogContent.txt",
-                async:false,
+            var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getBlogs&date='+new Date();
+            dataType: "text" //ajax 返回 文件 类型
+            $.ajax({
+                url: action,
+                method: 'get',
+                success: function(jsonStr,status){
+                    if(jsonStr){
+                        var json = eval('('+jsonStr+ ')');
+                        blogDiv = $(".single-inline")[0];
+                        if(blogDiv){
+                            $(blogDiv).prepend(json.content.replace(/display: none/g,"display: block"));
+                        }
+                    }
 
-            });//$.ajax() 返回其创建的 XMLHttpRequest 对象
-            if(htmlObj.responseText){
-                blogDiv = $(".single-inline")[0];
-                if(blogDiv){
-                    $(blogDiv).prepend(htmlObj.responseText.replace(/display: none/g,"display: block"));
                 }
-            }
-
-
+            });
 
             var editor1 = K.create('textarea[name="contentDesc"]', {
                 cssPath : '<%=projectPath%>/commonRes/kindeditor/plugins/code/prettify.css', //modify according to actual situation
@@ -129,15 +127,6 @@
 
 
 
-                /*
-                //it is easy to read one file
-                var htmlObj = $.ajax({
-                    url:"<%=projectPath%>/target/news.jsp",
-                    async:false,
-
-                });//$.ajax() 返回其创建的 XMLHttpRequest 对象
-                console.log(htmlObj.responseText);
-                */
 
                 /*
                 var f = "<%=projectPath%>/target/news.jsp";
