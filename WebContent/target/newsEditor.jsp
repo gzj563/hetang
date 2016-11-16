@@ -33,21 +33,19 @@
         };
         function saveContent(blogContent){
             if(blogContent){
-                blogContent.replace(/display: block/g,"display: none");
-
-                var content = encodeURI(encodeURI(blogContent));
+               var jsonObj={
+                    "contentDesc":blogContent.replace(/display: block/g,"display: none")
+               };
                 var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=updateBlogContent&date='+new Date();
-                var param="&contentDesc="+content;
-                dataType: "text" //ajax 返回 文件 类型
                 $.ajax({
                     url: action,
                     method: 'POST',
-                    data: param ,
+                    data: jsonObj ,
+                    dataType:"json",
                     success: function(data,status){
-                    	alert(data);
+                        alert(data);
                     }
                 });
-
             }
         };
 
@@ -62,7 +60,7 @@
                     if(jsonStr){
                         var json = eval('('+jsonStr+ ')');
                         blogDiv = $(".single-inline")[0];
-                        if(blogDiv){
+                        if(blogDiv && json.content){
                             $(blogDiv).prepend(json.content.replace(/display: none/g,"display: block"));
                         }
                     }
@@ -108,47 +106,21 @@
                 var title = K("#activity_title").val();
                 var content = K('#contentDesc').val();
                 if(title == undefined || title ==''){
-                    K("#title_alert").show();
-                    return false;
+                    //K("#title_alert").show();
+                    //return false;
                 }
 
                 console.log("start analyzing the file:"+new Date());
 
                 blogDiv = $(".single-inline")[0];
-                if(blogDiv){
-                    $(blogDiv).prepend("<div class='blog-to'> <div style='display: none;'><input type='button' value='delete' onclick='deleteMe(this);'/> </div>  "+content+"   </div>");
+                if(blogDiv && content){
+                    $(blogDiv).prepend("<div class='blog-to'> <div style='display: block;'><input type='button' value='delete' onclick='deleteMe(this);'/> </div>  "+ content +"   </div>");
                 }
-                //update local file
+
                 var blogContent = blogDiv.innerHTML;
                 if(blogContent){
-                    // replace display:block with display:none
                     saveContent(blogContent);
                 }
-
-
-
-
-                /*
-                var f = "<%=projectPath%>/target/news.jsp";
-                if (f) {
-                    var r = new FileReader();
-                    r.onload = function(e) {
-                        var contents = e.target.result;
-                        var rowDatas = contents.split("\n");
-                        if(rowDatas && rowDatas.length > 0){
-                            console.log("the number of available rows:"+rowDatas.length);
-                            for(var i in rowDatas){
-                                var rowData = rowDatas[i];
-                                if(rowData && rowData.trim()){
-                                    console.log(rowData);
-                                }
-                            }
-                        }
-                        console.log("end analyzing the file:"+new Date());
-                    }
-                    r.readAsText(f);
-                }
-                */
             });
         });
 

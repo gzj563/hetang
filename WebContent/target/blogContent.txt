@@ -1,7 +1,7 @@
-<div class='blog-to'>
+            <div class='blog-to'>
                 <div style='display: none'><input type='button' value='delete' onclick='deleteMe(this);'> </div>
-
             </div>
+
             <div class='blog-to'>
                 <div style='display: none'><input type='button' value='delete' onclick='deleteMe(this);'> </div>
                 <a href='single.html'><img class='img-responsive sin-on' src='images/sin.jpg' alt='' /></a>

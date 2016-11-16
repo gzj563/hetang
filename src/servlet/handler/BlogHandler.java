@@ -75,7 +75,7 @@ public class BlogHandler extends Handler{
 			conn=null;
 		}
 		
-		this.response.setCharacterEncoding("gbk");
+		this.response.setCharacterEncoding("UTF-8");
 		PrintWriter pw=this.response.getWriter();
 		pw.write( jsonObject!=null? jsonObject.toString() : "");
 		pw.close();
