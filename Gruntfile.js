@@ -16,12 +16,12 @@ module.exports = function(grunt){
 					'output/js/a.min.js':['WebContent/target/js/bootstrap.js']
 				}
 			},
-			buildall:{//按源文件结构压缩js文件夹
+			minAllJs:{//按源文件结构压缩js文件夹
 				files:[{
 					expand:true,
-					cwd:'WebContent/target/js/prj',//此目录下文件
+					cwd:'WebContent/target',//此目录下文件
 					src:['**/*.js','*.js'],
-					dest:'output/js'//输出到此目录下
+					dest:'output'//输出到此目录下
 				}]
 			},
 			release:{
@@ -29,11 +29,27 @@ module.exports = function(grunt){
 					'output/js/release.min.js':['WebContent/target/js/bootstrap.js','WebContent/target/js/prj/testUglify.js']
 				}
 			}
+		},
+		cssmin:{
+			options:{
+				keepSpecialComments:0
+			},
+			minAllCss:{
+				expand: true,
+				cwd:'WebContent/target',//此目录下文件
+				src:['**/*.css','*.css'],
+				dest:'output'//输出到此目录下
+			}
+
 		}
 	});
-	//load the uglify plugin
+	//load the nessary plugin
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	//register default task
-	grunt.registerTask('default',['uglify']);
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+
+	grunt.registerTask('minAllJs',['uglify:minAllJs']);
+	grunt.registerTask('minAllCss',['cssmin:minAllCss']);
+	grunt.registerTask('minAll',['minAllJs','minAllCss']);
 	
 }
