@@ -17,21 +17,34 @@
 <script type="text/javascript">
 
     $(window).load(function() {
-    	
-    	var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getBlogs&date='+new Date();
+        var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getListBlogs&date='+new Date();
         dataType: "text" //ajax 返回 文件 类型
         $.ajax({
             url: action,
             method: 'get',
             success: function(jsonStr,status){
-            	if(jsonStr){
-            		var json = eval('('+jsonStr+ ')');
-            		blogDiv = $(".single-inline")[0];
+                if(jsonStr){
+                    var jsons = eval('('+jsonStr+ ')');
+                    blogDiv = $(".single-inline")[0];
                     if(blogDiv){
-                        $(blogDiv).prepend(json.content);
+                        $(blogDiv).empty();
                     }
-            	}
-            	
+                    $.each(jsons,function(index,blog){
+                        if(blog.content){
+                            var fillStr =
+                                    "<div class='blog-to'>"
+                                    +"   <div class='blog-top'>"
+                                    +"        <div class='top-blog'>"
+                                    +           blog.content
+                                    +"          </div>"
+                                    +"          <div class='clearfix'> </div>"
+                                    +"    </div>"
+                                    +"</div>"
+
+                            $(blogDiv).prepend(fillStr);
+                        }
+                    });
+                }
             }
         });
     });
@@ -40,9 +53,8 @@
 <!--inner-page-blog-->
 <div class="blog">
     <div class="container">
-        <h3>Blogs</h3>
+        <h3>最新时事</h3>
         <div class="single-inline">
-
 
         </div>
     </div>

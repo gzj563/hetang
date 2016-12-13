@@ -15,7 +15,7 @@ what you can do:
         2.3
 
 deploy to BAE:
-
+    1: change the configuration file.
 
 
 参考：
@@ -31,4 +31,12 @@ deploy to BAE:
         http://www.pdfdo.com/pdf-extract-image.aspx
 图片制作：
     http://www.uupoop.com/ photoshop 在线软件
+
+
+功能列表
+    1: 各种效果试验页
+        /effectDemo.jsp
+    2: 用户可以维护一些新闻,增删查
+        /newsEditor.jsp
+    3:
 

@@ -24,49 +24,68 @@
         .input{font-size:16px;color:#000000;line-height:20px;padding:10px 0;margin:-10px 0;}
     </style>
     <SCRIPT type="text/javascript">
-        function deleteMe(self){
-            var blogSection = $(self).closest('.blog-to')[0];
-            blogSection.remove();
-            //save the rest content
-            blogDiv = $(".single-inline")[0];
-            saveContent(blogDiv.innerHTML);
-        };
-        function saveContent(blogContent){
-            if(blogContent){
-               var jsonObj={
-                    "contentDesc":blogContent.replace(/display: block/g,"display: none")
-               };
-                var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=updateBlogContent&date='+new Date();
-                $.ajax({
-                    url: action,
-                    method: 'POST',
-                    data: jsonObj ,
-                    dataType:"json",
-                    success: function(data,status){
-                        alert(data);
-                    }
-                });
-            }
+        function deleteMe(self,blogId){
+
+            var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=deleteBlogById&id='+blogId+'&date='+new Date();
+            $.ajax({
+                url: action,
+                method: 'POST',
+                dataType:"text",
+                success: function(jsonResp,status){
+                	if(jsonResp){
+                        jsonResp = typeof jsonResp ==="string" ? eval('('+jsonResp+ ')') : jsonResp;
+						if(jsonResp.errorCode.length===3){
+                            alert("删除数据失败");
+                        }else{
+                        	var blogSection = $(self).closest('.blog-to')[0];
+                            blogSection.remove();
+                        }
+                	}
+                },
+                error:function(data){
+                	console.log("delete failed");
+                }
+            });
+
         };
 
-        KindEditor.ready(function(K) {
 
-            var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getBlogs&date='+new Date();
+        //refresh blog
+        function reloadBlog(){
+            var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=getListBlogs&date='+new Date();
             dataType: "text" //ajax 返回 文件 类型
             $.ajax({
                 url: action,
                 method: 'get',
                 success: function(jsonStr,status){
                     if(jsonStr){
-                        var json = eval('('+jsonStr+ ')');
+                        var jsons = eval('('+jsonStr+ ')');
                         blogDiv = $(".single-inline")[0];
-                        if(blogDiv && json.content){
-                            $(blogDiv).prepend(json.content.replace(/display: none/g,"display: block"));
+                        if(blogDiv){
+                            $(blogDiv).empty();
                         }
-                    }
+                        $.each(jsons,function(index,blog){
+                            if(blog.content){
+                                var fillStr =
+                                        "<div class='blog-to'>"
+                                        +"   <div style='display: block'><input type='button' value='delete' onclick='deleteMe(this,"+blog.id+");'> </div>"
+                                        +"   <div class='blog-top'>"
+                                        +"        <div class='top-blog'>"
+                                        +           blog.content
+                                        +"          </div>"
+                                        +"          <div class='clearfix'> </div>"
+                                        +"    </div>"
+                                        +"</div>"
 
+                                $(blogDiv).prepend(fillStr);
+                            }
+                        });
+                    }
                 }
             });
+        };
+        KindEditor.ready(function(K) {
+            reloadBlog();
 
             var editor1 = K.create('textarea[name="contentDesc"]', {
                 cssPath : '<%=projectPath%>/commonRes/kindeditor/plugins/code/prettify.css', //modify according to actual situation
@@ -99,9 +118,14 @@
 
             });
             K("#sub").bind('click',function(){
-                <%-- in case special charactor,such as '%&' --%>
+                <%-- in case special character,such as '%&' --%>
                 //var title = encodeURI(encodeURI(K("#activity_title").val()));
                 //var content = encodeURI(encodeURI(K('#contentDesc').val()));
+
+                var blogDiv = $(".single-inline")[0];
+                if(!blogDiv){
+                    return;
+                }
 
                 var title = K("#activity_title").val();
                 var content = K('#contentDesc').val();
@@ -110,16 +134,46 @@
                     //return false;
                 }
 
-                console.log("start analyzing the file:"+new Date());
 
-                blogDiv = $(".single-inline")[0];
-                if(blogDiv && content){
-                    $(blogDiv).prepend("<div class='blog-to'> <div style='display: block;'><input type='button' value='delete' onclick='deleteMe(this);'/> </div>  "+ content +"   </div>");
-                }
+                if(content){
+                    //it can avoid issue that caused by special characters using JSON object
+                    var jsonObj={
+                        "contentDesc": content
+                    };
+                    var action='<%=projectPath%>/HandlerManager?handler=blogHandler&methodName=addBlog&date='+new Date();
+                    $.ajax({
+                        url: action,
+                        method: 'POST',
+                        data: jsonObj ,
+                        dataType:"json",
+                        success: function(jsonResp,status){
+       						if(jsonResp){
+                                jsonResp = typeof jsonResp ==="string" ? eval('('+jsonStr+ ')') : jsonResp;
+       							if(jsonResp.errorCode.length===3){
+                                    alert("保存数据失败");
+                                }else{
+                                    var fillStr =
+                                            "<div class='blog-to'>"
+                                            +"   <div style='display: block'><input type='button' value='delete' onclick='deleteMe(this,"+jsonResp.blogId+");'> </div>"
+                                            +"   <div class='blog-top'>"
+                                            +"        <div class='top-blog'>"
+                                            +           content
+                                            +"          </div>"
+                                            +"          <div class='clearfix'> </div>"
+                                            +"    </div>"
+                                            +"</div>"
 
-                var blogContent = blogDiv.innerHTML;
-                if(blogContent){
-                    saveContent(blogContent);
+                                    $(blogDiv).prepend(fillStr);
+                                }
+       						}else{
+       							console.log("response exception");
+       						}
+                            
+                        },
+                        error:function(data){
+                            console.log(data);
+                        }
+                    });
                 }
             });
         });
